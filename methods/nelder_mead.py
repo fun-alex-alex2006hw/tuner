@@ -4,8 +4,20 @@ from point import Point
 from searchresult import SearchResult
 
 DEFAULT_INITIAL_POINT = Point(256, 128)
+INITIAL_SIMPLEX = [
+    Point(64, 64),
+    Point(128, 128),
+    Point(256, 256)
+]
+MINIMUM_DISTANCE = 0.1
 
-def nelder_mead(objective, initial, neighbors, roundfn, maxiter=100):
+def normalize(p):
+    ng = int(p[0] / 32)
+    vl = int(math.log(p[1], 2))
+    return Point(ng, vl)
+
+def nelder_mead(objective, initial, neighbors, roundfn, maxiter=100,
+        initial_simplex=None):
     '''Optimizes the objective function using a modified Nelder-Mead algorithm.
 
     Arguments:
@@ -19,6 +31,7 @@ def nelder_mead(objective, initial, neighbors, roundfn, maxiter=100):
                objective function.
     maxiter -- The maximum number of iterations of the algorithm to run before
                aborting and returning the result.  Default 100.
+    initial_simplex -- Optional initial simplex to use
     '''
 
     # Wrap the objective function in a memoized function.  This serves two
@@ -38,8 +51,11 @@ def nelder_mead(objective, initial, neighbors, roundfn, maxiter=100):
     GAMMA = 0.5
     SIGMA = 0.5
 
-    # Generate initial simplex
-    simplex = [initial] + neighbors(initial)[:N]
+    if initial_simplex:
+        simplex = initial_simplex
+    else:
+        # Generate initial simplex
+        simplex = [initial] + neighbors(initial)[:N]
 
     visited = set()
 
@@ -58,17 +74,12 @@ def nelder_mead(objective, initial, neighbors, roundfn, maxiter=100):
 
     iterations = 1
     while iterations < maxiter:
-        # Test for convergence
-        # If the optimal point appears multiple times in the simplex, the
-        # algorithm terminates
-        x0 = simplex[0]
-        converged = False
-        for xi in simplex[1:]:
-            if xi == x0:
-                converged = True
-                break
-
-        if converged:
+        # Dennis and Woods convergence test
+        s2 = map(normalize, simplex)
+        delta = max(1, s2[0].norm())
+        dist = max((x - s2[0]).norm() for x in s2[1:])
+        if 1/float(delta) * dist <= MINIMUM_DISTANCE:
+            # Converged
             break
 
         # Step 1: Order simplex by objective value
@@ -151,4 +162,5 @@ def neighbors_acc(x):
     return n
 
 def tune(objective, opts):
-    return nelder_mead(objective, DEFAULT_INITIAL_POINT, neighbors_acc, round_acc)
+    return nelder_mead(objective, DEFAULT_INITIAL_POINT, neighbors_acc,
+            round_acc)#, initial_simplex=INITIAL_SIMPLEX)

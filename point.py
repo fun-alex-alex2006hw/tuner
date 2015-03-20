@@ -1,3 +1,5 @@
+import math
+
 class Point(object):
     '''Represents a point in n-dimensional real space.'''
 
@@ -69,3 +71,7 @@ class Point(object):
 
     def __repr__(self):
         return self.__str__()
+
+    def norm(self):
+        '''Returns the Euclidean norm of this Point'''
+        return math.sqrt(sum(map(lambda i: i**2, self.coords)))
