@@ -1,0 +1,2382 @@
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40">
+ <!-- Microsoft Office 2004 XML Spreadsheet (SpreadsheetML) -->
+ <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
+  <WindowHeight>8700</WindowHeight>
+  <WindowWidth>16700</WindowWidth>
+  <WindowTopX>200</WindowTopX>
+  <WindowTopY>200</WindowTopY>
+  <ProtectStructure>False</ProtectStructure>
+  <ProtectWindows>False</ProtectWindows>
+ </ExcelWorkbook>
+ <Styles>
+  <Style ss:ID="Default" ss:Name="Normal">
+   <Alignment ss:Vertical="Bottom"/>
+   <Borders/>
+   <Font ss:FontName="Times New Roman" ss:Size="12" ss:Color="#000000"/>
+   <Interior/>
+   <NumberFormat/>
+   <Protection/>
+  </Style>
+  <Style ss:ID="times12left">
+   <Alignment ss:Horizontal="Left" ss:Vertical="Bottom"/>
+   <Font ss:FontName="Times New Roman" ss:Size="12" ss:Color="#000000"/>
+  </Style>
+  <Style ss:ID="times12right">
+   <Alignment ss:Horizontal="Right" ss:Vertical="Bottom"/>
+   <Font ss:FontName="Times New Roman" ss:Size="12" ss:Color="#000000"/>
+   <NumberFormat ss:Format="#,##0.0000000"/>
+  </Style>
+  <Style ss:ID="times12center">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+   <Font ss:FontName="Times New Roman" ss:Size="12" ss:Color="#000000"/>
+  </Style>
+  <Style ss:ID="times12centernum0">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+   <Font ss:FontName="Times New Roman" ss:Size="12" ss:Color="#000000"/>
+   <NumberFormat ss:Format="0"/>
+  </Style>
+  <Style ss:ID="times12boldfixed">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+   <Font ss:FontName="Times New Roman" ss:Size="12" ss:Color="#333399" ss:Bold="1"/>
+   <NumberFormat ss:Format="Fixed"/>
+  </Style>
+  <Style ss:ID="headerleft">
+   <Alignment ss:Horizontal="Left" ss:Vertical="Center"/>
+   <Font ss:Size="12" ss:Color="#000000" ss:Bold="1"/>
+   <Interior ss:Color="#FFFFFF" ss:Pattern="Solid"/>
+   <NumberFormat ss:Format="@"/>
+  </Style>
+  <Style ss:ID="headerctr">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Center"/>
+   <Font ss:Size="12" ss:Color="#000000" ss:Bold="1"/>
+   <Interior ss:Color="#FFFFFF" ss:Pattern="Solid"/>
+   <NumberFormat ss:Format="@"/>
+  </Style>
+ </Styles>
+ <Worksheet ss:Name="Autotune Results">
+  <Table ss:ExpandedColumnCount="11" ss:ExpandedRowCount="2" x:FullColumns="1"
+   x:FullRows="1" ss:StyleID="times12left" ss:DefaultColumnWidth="65"
+   ss:DefaultRowHeight="15">
+   <Column ss:StyleID="times12left" ss:AutoFitWidth="0" ss:Width="90"/>
+   <Column ss:StyleID="times12right" ss:AutoFitWidth="0" ss:Width="72" ss:Span="3"/>
+   <Column ss:Index="6" ss:StyleID="times12center" ss:AutoFitWidth="0" ss:Span="5"/>
+   <Row ss:AutoFitHeight="0" ss:Height="18" ss:StyleID="headerctr">
+    <Cell ss:StyleID="headerleft"><Data ss:Type="String">Kernel</Data></Cell>
+    <Cell><Data ss:Type="String">Orig Time</Data></Cell>
+    <Cell><Data ss:Type="String">Stdev</Data></Cell>
+    <Cell><Data ss:Type="String">Tuned Time</Data></Cell>
+    <Cell><Data ss:Type="String">Stdev</Data></Cell>
+    <Cell><Data ss:Type="String"># Gangs</Data></Cell>
+    <Cell><Data ss:Type="String">Vec Len</Data></Cell>
+    <Cell><Data ss:Type="String"># Iterations</Data></Cell>
+    <Cell><Data ss:Type="String">Samples</Data></Cell>
+    <Cell><Data ss:Type="String">Speedup</Data></Cell>
+    <Cell><Data ss:Type="String">Signif?</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">correlation_k2</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000119666666667</Data></Cell>
+    <Cell><Data ss:Type="Number">5.7735026919e-07</Data></Cell>
+    <Cell ss:Index="4"><Data ss:Type="Number">4.26666666667e-05</Data></Cell>
+    <Cell><Data ss:Type="Number">5.7735026919e-07</Data></Cell>
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">100</Data></Cell>
+    <Cell ss:StyleID="times12centernum0"><Data ss:Type="Number">3</Data></Cell>
+    <Cell ss:StyleID="times12boldfixed" ss:Formula="=RC[-8]/RC[-6]"><Data ss:Type="Number"></Data></Cell>
+    <Cell ss:StyleID="times12boldfixed"
+     ss:Formula="=IF(AND(((RC[-9]-RC[-7])-TINV(0.1,((((RC[-8]^2/RC[-2])+(RC[-6]^2/RC[-2]))^2)/(((1/(RC[-2]+1))*(RC[-8]^2/RC[-2])^2)+((1/(RC[-2]+1))*(RC[-6]^2/RC[-2])^2))-2))*(SQRT((RC[-8]^2/RC[-2])+(RC[-6]^2/RC[-2]))))&lt;=0, ((RC[-9]-RC[-7])+TINV(0.1,((((RC[-8]^2/RC[-2])+(RC[-6]^2/RC[-2]))^2)/(((1/(RC[-2]+1))*(RC[-8]^2/RC[-2])^2)+((1/(RC[-2]+1))*(RC[-6]^2/RC[-2])^2))-2))*(SQRT(((RC[-8]^2/RC[-2]))+(RC[-6]^2/RC[-2]))))&gt;=0),&quot;No&quot;,&quot;YES&quot;)"><Data
+      ss:Type="String"></Data></Cell>
+   </Row>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <FreezePanes/>
+   <FrozenNoSplit/>
+   <SplitHorizontal>1</SplitHorizontal>
+   <TopRowBottomPane>1</TopRowBottomPane>
+   <ActivePane>2</ActivePane>
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+    </Pane>
+    <Pane>
+     <Number>2</Number>
+     <ActiveCol>1</ActiveCol>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+ <Worksheet ss:Name="Points Tested">
+  <Table ss:ExpandedColumnCount="5" ss:ExpandedRowCount="101" x:FullColumns="1"
+   x:FullRows="1" ss:StyleID="times12left" ss:DefaultColumnWidth="65"
+   ss:DefaultRowHeight="15">
+   <Column ss:StyleID="times12center" ss:AutoFitWidth="0" ss:Span="1"/>
+   <Column ss:Index="3" ss:StyleID="times12right" ss:AutoFitWidth="0" ss:Width="72"
+    ss:Span="1"/>
+   <Column ss:Index="5" ss:StyleID="times12left" ss:AutoFitWidth="0" ss:Width="360"/>
+   <Row ss:AutoFitHeight="0" ss:Height="18" ss:StyleID="headerctr">
+    <Cell><Data ss:Type="String"># Gangs</Data></Cell>
+    <Cell><Data ss:Type="String">Vec Len</Data></Cell>
+    <Cell><Data ss:Type="String">Avg Time</Data></Cell>
+    <Cell><Data ss:Type="String">Stdev</Data></Cell>
+    <Cell ss:StyleID="headerleft"><Data ss:Type="String">Error Msg</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.00857</Data></Cell>
+    <Cell><Data ss:Type="Number">3.21869538789e-05</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.00480733333333</Data></Cell>
+    <Cell><Data ss:Type="Number">1.07857931249e-05</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.002977</Data></Cell>
+    <Cell><Data ss:Type="Number">1e-06</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.00206666666667</Data></Cell>
+    <Cell><Data ss:Type="Number">3.21455025366e-06</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.00163066666667</Data></Cell>
+    <Cell><Data ss:Type="Number">2.08166599947e-06</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.001146</Data></Cell>
+    <Cell><Data ss:Type="Number">3.46410161514e-06</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000928666666667</Data></Cell>
+    <Cell><Data ss:Type="Number">3.0550504633e-06</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000877333333333</Data></Cell>
+    <Cell><Data ss:Type="Number">1.15470053838e-06</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000971</Data></Cell>
+    <Cell><Data ss:Type="Number">1e-06</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.00127266666667</Data></Cell>
+    <Cell><Data ss:Type="Number">1.15470053838e-06</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.00431766666667</Data></Cell>
+    <Cell><Data ss:Type="Number">1.15470053838e-06</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.00241366666667</Data></Cell>
+    <Cell><Data ss:Type="Number">5.85946527708e-06</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.00150166666667</Data></Cell>
+    <Cell><Data ss:Type="Number">1.15470053838e-06</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.001044</Data></Cell>
+    <Cell><Data ss:Type="Number">1e-06</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000825</Data></Cell>
+    <Cell><Data ss:Type="Number">1e-06</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000581666666667</Data></Cell>
+    <Cell><Data ss:Type="Number">1.52752523165e-06</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000473333333333</Data></Cell>
+    <Cell><Data ss:Type="Number">2.30940107676e-06</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000448666666667</Data></Cell>
+    <Cell><Data ss:Type="Number">1.15470053838e-06</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000495666666667</Data></Cell>
+    <Cell><Data ss:Type="Number">5.7735026919e-07</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000646333333333</Data></Cell>
+    <Cell><Data ss:Type="Number">5.7735026919e-07</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.00217</Data></Cell>
+    <Cell><Data ss:Type="Number">2.64575131106e-06</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.001217</Data></Cell>
+    <Cell><Data ss:Type="Number">2e-06</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.00076</Data></Cell>
+    <Cell><Data ss:Type="Number">1.73205080757e-06</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000532</Data></Cell>
+    <Cell><Data ss:Type="Number">1e-06</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000422333333333</Data></Cell>
+    <Cell><Data ss:Type="Number">5.7735026919e-07</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000300666666667</Data></Cell>
+    <Cell><Data ss:Type="Number">5.7735026919e-07</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000247666666667</Data></Cell>
+    <Cell><Data ss:Type="Number">5.7735026919e-07</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000233333333333</Data></Cell>
+    <Cell><Data ss:Type="Number">1.52752523165e-06</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000257333333333</Data></Cell>
+    <Cell><Data ss:Type="Number">1.15470053838e-06</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000333</Data></Cell>
+    <Cell><Data ss:Type="Number">1e-06</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.00109733333333</Data></Cell>
+    <Cell><Data ss:Type="Number">2.08166599947e-06</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000618333333333</Data></Cell>
+    <Cell><Data ss:Type="Number">1.15470053838e-06</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000389</Data></Cell>
+    <Cell><Data ss:Type="Number">0.0</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000274666666667</Data></Cell>
+    <Cell><Data ss:Type="Number">5.7735026919e-07</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000221</Data></Cell>
+    <Cell><Data ss:Type="Number">3.31967762576e-20</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.00016</Data></Cell>
+    <Cell><Data ss:Type="Number">1e-06</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000133666666667</Data></Cell>
+    <Cell><Data ss:Type="Number">5.7735026919e-07</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000129666666667</Data></Cell>
+    <Cell><Data ss:Type="Number">5.7735026919e-07</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000150333333333</Data></Cell>
+    <Cell><Data ss:Type="Number">5.7735026919e-07</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000331666666667</Data></Cell>
+    <Cell><Data ss:Type="Number">5.7735026919e-07</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000560333333333</Data></Cell>
+    <Cell><Data ss:Type="Number">5.7735026919e-07</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000318</Data></Cell>
+    <Cell><Data ss:Type="Number">0.0</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000204</Data></Cell>
+    <Cell><Data ss:Type="Number">0.0</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000146333333333</Data></Cell>
+    <Cell><Data ss:Type="Number">5.7735026919e-07</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000120333333333</Data></Cell>
+    <Cell><Data ss:Type="Number">5.7735026919e-07</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">8.96666666667e-05</Data></Cell>
+    <Cell><Data ss:Type="Number">5.7735026919e-07</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">7.7e-05</Data></Cell>
+    <Cell><Data ss:Type="Number">1e-06</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">8.06666666667e-05</Data></Cell>
+    <Cell><Data ss:Type="Number">1.15470053838e-06</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">9.73333333333e-05</Data></Cell>
+    <Cell><Data ss:Type="Number">1.15470053838e-06</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000254</Data></Cell>
+    <Cell><Data ss:Type="Number">1e-06</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000289333333333</Data></Cell>
+    <Cell><Data ss:Type="Number">1.15470053838e-06</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000168666666667</Data></Cell>
+    <Cell><Data ss:Type="Number">5.7735026919e-07</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000111</Data></Cell>
+    <Cell><Data ss:Type="Number">0.0</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">8.3e-05</Data></Cell>
+    <Cell><Data ss:Type="Number">0.0</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">7.1e-05</Data></Cell>
+    <Cell><Data ss:Type="Number">0.0</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">5.66666666667e-05</Data></Cell>
+    <Cell><Data ss:Type="Number">1.15470053838e-06</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">5.23333333333e-05</Data></Cell>
+    <Cell><Data ss:Type="Number">1.52752523165e-06</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">5.66666666667e-05</Data></Cell>
+    <Cell><Data ss:Type="Number">5.7735026919e-07</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">9.1e-05</Data></Cell>
+    <Cell><Data ss:Type="Number">1.73205080757e-06</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000217</Data></Cell>
+    <Cell><Data ss:Type="Number">0.0</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000153</Data></Cell>
+    <Cell><Data ss:Type="Number">0.0</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">9.4e-05</Data></Cell>
+    <Cell><Data ss:Type="Number">0.0</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">6.6e-05</Data></Cell>
+    <Cell><Data ss:Type="Number">1e-06</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">5.23333333333e-05</Data></Cell>
+    <Cell><Data ss:Type="Number">5.7735026919e-07</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.7e-05</Data></Cell>
+    <Cell><Data ss:Type="Number">0.0</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.36666666667e-05</Data></Cell>
+    <Cell><Data ss:Type="Number">5.7735026919e-07</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.66666666667e-05</Data></Cell>
+    <Cell><Data ss:Type="Number">1.15470053838e-06</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">5.8e-05</Data></Cell>
+    <Cell><Data ss:Type="Number">1.73205080757e-06</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">8.53333333333e-05</Data></Cell>
+    <Cell><Data ss:Type="Number">5.7735026919e-07</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000218666666667</Data></Cell>
+    <Cell><Data ss:Type="Number">5.7735026919e-07</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000150666666667</Data></Cell>
+    <Cell><Data ss:Type="Number">5.7735026919e-07</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">9.26666666667e-05</Data></Cell>
+    <Cell><Data ss:Type="Number">5.7735026919e-07</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">6.5e-05</Data></Cell>
+    <Cell><Data ss:Type="Number">0.0</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">5.3e-05</Data></Cell>
+    <Cell><Data ss:Type="Number">1e-06</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.86666666667e-05</Data></Cell>
+    <Cell><Data ss:Type="Number">5.7735026919e-07</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.26666666667e-05</Data></Cell>
+    <Cell><Data ss:Type="Number">1.15470053838e-06</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.4e-05</Data></Cell>
+    <Cell><Data ss:Type="Number">1e-06</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">5.46666666667e-05</Data></Cell>
+    <Cell><Data ss:Type="Number">5.7735026919e-07</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">8.13333333333e-05</Data></Cell>
+    <Cell><Data ss:Type="Number">5.7735026919e-07</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000223666666667</Data></Cell>
+    <Cell><Data ss:Type="Number">5.7735026919e-07</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000150666666667</Data></Cell>
+    <Cell><Data ss:Type="Number">5.7735026919e-07</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">9.33333333333e-05</Data></Cell>
+    <Cell><Data ss:Type="Number">5.7735026919e-07</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">6.53333333333e-05</Data></Cell>
+    <Cell><Data ss:Type="Number">5.7735026919e-07</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">5.3e-05</Data></Cell>
+    <Cell><Data ss:Type="Number">8.2991940644e-21</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.76666666667e-05</Data></Cell>
+    <Cell><Data ss:Type="Number">5.7735026919e-07</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.26666666667e-05</Data></Cell>
+    <Cell><Data ss:Type="Number">5.7735026919e-07</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.43333333333e-05</Data></Cell>
+    <Cell><Data ss:Type="Number">5.7735026919e-07</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">5.4e-05</Data></Cell>
+    <Cell><Data ss:Type="Number">8.2991940644e-21</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">8.2e-05</Data></Cell>
+    <Cell><Data ss:Type="Number">1e-06</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000235333333333</Data></Cell>
+    <Cell><Data ss:Type="Number">5.7735026919e-07</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000150666666667</Data></Cell>
+    <Cell><Data ss:Type="Number">5.7735026919e-07</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">9.26666666667e-05</Data></Cell>
+    <Cell><Data ss:Type="Number">5.7735026919e-07</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">6.6e-05</Data></Cell>
+    <Cell><Data ss:Type="Number">0.0</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">5.33333333333e-05</Data></Cell>
+    <Cell><Data ss:Type="Number">5.7735026919e-07</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.83333333333e-05</Data></Cell>
+    <Cell><Data ss:Type="Number">5.7735026919e-07</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.3e-05</Data></Cell>
+    <Cell><Data ss:Type="Number">8.2991940644e-21</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.5e-05</Data></Cell>
+    <Cell><Data ss:Type="Number">1e-06</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">5.53333333333e-05</Data></Cell>
+    <Cell><Data ss:Type="Number">5.7735026919e-07</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">9e-05</Data></Cell>
+    <Cell><Data ss:Type="Number">1e-06</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000266</Data></Cell>
+    <Cell><Data ss:Type="Number">0.0</Data></Cell>
+    <Cell ss:StyleID="times12left"><Data ss:Type="String"></Data></Cell>
+   </Row>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <FreezePanes/>
+   <FrozenNoSplit/>
+   <SplitHorizontal>1</SplitHorizontal>
+   <TopRowBottomPane>1</TopRowBottomPane>
+   <ActivePane>2</ActivePane>
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+    </Pane>
+    <Pane>
+     <Number>2</Number>
+     <ActiveRow>0</ActiveRow>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+ <Worksheet ss:Name="Individual Runs">
+  <Table ss:ExpandedColumnCount="3" ss:ExpandedRowCount="301" x:FullColumns="1"
+   x:FullRows="1" ss:StyleID="times12left" ss:DefaultColumnWidth="65"
+   ss:DefaultRowHeight="15">
+   <Column ss:StyleID="times12center" ss:AutoFitWidth="0" ss:Span="1"/>
+   <Column ss:Index="3" ss:StyleID="times12right" ss:AutoFitWidth="0" ss:Width="72"/>
+   <Row ss:AutoFitHeight="0" ss:Height="18" ss:StyleID="headerctr">
+    <Cell><Data ss:Type="String"># Gangs</Data></Cell>
+    <Cell><Data ss:Type="String">Vec Len</Data></Cell>
+    <Cell><Data ss:Type="String">Time</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.008574</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.008536</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.0086</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.004795</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.004815</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.004812</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.002978</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.002977</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.002976</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.002069</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.002068</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.002063</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.001629</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.001633</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.00163</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.001148</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.001148</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.001142</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000928</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000926</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000932</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000878</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000876</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000878</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000972</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000971</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.00097</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.001272</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.001272</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.001274</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.004319</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.004317</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.004317</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.002407</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.002416</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.002418</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.001501</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.001503</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.001501</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.001043</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.001045</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.001044</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000826</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000825</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000824</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000583</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000582</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.00058</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000476</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000472</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000472</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000448</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.00045</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000448</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000496</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000496</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000495</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000647</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000646</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000646</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.002171</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.002167</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.002172</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.001219</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.001215</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.001217</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000761</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000758</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000761</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000531</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000533</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000532</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000423</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000422</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000422</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.0003</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000301</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000301</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000247</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000248</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000248</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000233</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000232</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000235</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000258</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000258</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000256</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000334</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000332</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000333</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.001095</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.001098</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.001099</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000617</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000619</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000619</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000389</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000389</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000389</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000275</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000274</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000275</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000221</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000221</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000221</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000161</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000159</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.00016</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000134</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000134</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000133</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000129</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.00013</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.00013</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000151</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.00015</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.00015</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000332</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000331</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000332</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.00056</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000561</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.00056</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000318</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000318</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000318</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000204</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000204</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000204</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000147</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000146</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000146</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.00012</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000121</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.00012</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">9e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">8.9e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">9e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">7.6e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">7.8e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">7.7e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">8.2e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">8e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">8e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">9.8e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">9.8e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">9.6e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000255</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000254</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000253</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.00029</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.00029</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000288</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000169</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000169</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000168</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000111</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000111</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000111</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">8.3e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">8.3e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">8.3e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">7.1e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">7.1e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">7.1e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">5.8e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">5.6e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">5.6e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">5.2e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">5.4e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">5.1e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">5.7e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">5.6e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">5.7e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">9e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">9.3e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">9e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000217</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000217</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000217</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000153</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000153</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000153</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">9.4e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">9.4e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">9.4e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">6.7e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">6.5e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">6.6e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">5.2e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">5.3e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">5.2e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.7e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.7e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.7e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.4e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.4e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.3e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.8e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.6e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.6e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">5.7e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">5.7e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">6e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">8.6e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">8.5e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">8.5e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000219</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000219</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000218</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000151</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.00015</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000151</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">9.3e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">9.2e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">9.3e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">6.5e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">6.5e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">6.5e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">5.4e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">5.2e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">5.3e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.9e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.9e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.8e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.4e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.2e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.2e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.3e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.5e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.4e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">5.5e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">5.4e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">5.5e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">8.1e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">8.1e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">8.2e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000224</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000223</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000224</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000151</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.00015</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000151</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">9.3e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">9.3e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">9.4e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">6.5e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">6.5e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">6.6e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">5.3e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">5.3e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">5.3e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.8e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.8e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.7e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.3e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.3e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.2e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.5e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.4e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.4e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">5.4e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">5.4e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">5.4e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">8.2e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">8.3e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">8.1e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000235</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000236</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000235</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.00015</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000151</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000151</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">9.3e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">9.2e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="Number">9.3e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">6.6e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">6.6e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="Number">6.6e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">5.4e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">5.3e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="Number">5.3e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.8e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.9e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.8e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.3e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.3e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">64.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.3e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.5e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.6e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">128.0</Data></Cell>
+    <Cell><Data ss:Type="Number">4.4e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">5.5e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">5.5e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">256.0</Data></Cell>
+    <Cell><Data ss:Type="Number">5.6e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">8.9e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">9.1e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">512.0</Data></Cell>
+    <Cell><Data ss:Type="Number">9e-05</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000266</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000266</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">1024.0</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000266</Data></Cell>
+   </Row>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <FreezePanes/>
+   <FrozenNoSplit/>
+   <SplitHorizontal>1</SplitHorizontal>
+   <TopRowBottomPane>1</TopRowBottomPane>
+   <ActivePane>2</ActivePane>
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+    </Pane>
+    <Pane>
+     <Number>2</Number>
+     <ActiveRow>0</ActiveRow>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+</Workbook>

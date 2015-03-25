@@ -1,0 +1,4 @@
+# Ignore EPS and PDF files in test_data since they can be regenerated easily
+# and Git does not handle binaries well
+*.pdf
+*.eps
