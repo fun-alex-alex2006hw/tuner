@@ -3,11 +3,11 @@ set term postscript eps enhanced color size 10, 21 "Times-Roman,24"
 set output "correlation_k1.eps"
 set multiplot layout 3,1
 
-set title "All Points Tested - Optimal: 512 gangs, vector length 64 - Resulting time 0.00063 (stdev: 8.54400374532e-06)"
+set title "All Points Tested - Optimal: 448 gangs, vector length 64 - Resulting time 0.000497 (stdev: 3.60555127546e-06)"
 set xlabel "Num Gangs"
 set ylabel "Vector Length"
 set zlabel "Time" rotate
-set label 1 "0.00063" at 512.0, 64.0, 0.00063 left
+set label 1 "0.000497" at 448.0, 64.0, 0.000497 left
 set grid
 
 splot 'correlation_k1.dat' using 1:2:3 notitle with points pointtype 7
