@@ -79,6 +79,9 @@
     <Cell><Data ss:Type="String">Signif?</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">bicg_k1</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000719666666667</Data></Cell>
+    <Cell><Data ss:Type="Number">3.62537354397e-05</Data></Cell>
     <Cell ss:Index="4"><Data ss:Type="Number">0.00048</Data></Cell>
     <Cell><Data ss:Type="Number">9.64365076099e-06</Data></Cell>
     <Cell><Data ss:Type="Number">544.0</Data></Cell>

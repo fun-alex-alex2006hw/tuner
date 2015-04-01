@@ -79,6 +79,9 @@
     <Cell><Data ss:Type="String">Signif?</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">correlation_k1</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000724</Data></Cell>
+    <Cell><Data ss:Type="Number">4.3e-05</Data></Cell>
     <Cell ss:Index="4"><Data ss:Type="Number">0.000497</Data></Cell>
     <Cell><Data ss:Type="Number">3.60555127546e-06</Data></Cell>
     <Cell><Data ss:Type="Number">448.0</Data></Cell>

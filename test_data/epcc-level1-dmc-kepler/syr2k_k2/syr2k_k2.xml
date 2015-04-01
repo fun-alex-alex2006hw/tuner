@@ -79,6 +79,9 @@
     <Cell><Data ss:Type="String">Signif?</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">syr2k_k2</Data></Cell>
+    <Cell><Data ss:Type="Number">0.00825533333333</Data></Cell>
+    <Cell><Data ss:Type="Number">1.15470053838e-06</Data></Cell>
     <Cell ss:Index="4"><Data ss:Type="Number">0.001102</Data></Cell>
     <Cell><Data ss:Type="Number">2e-06</Data></Cell>
     <Cell><Data ss:Type="Number">608.0</Data></Cell>

@@ -79,6 +79,9 @@
     <Cell><Data ss:Type="String">Signif?</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">covariance_k1</Data></Cell>
+    <Cell><Data ss:Type="Number">0.000684</Data></Cell>
+    <Cell><Data ss:Type="Number">2.1e-05</Data></Cell>
     <Cell ss:Index="4"><Data ss:Type="Number">0.000496</Data></Cell>
     <Cell><Data ss:Type="Number">9.53939201417e-06</Data></Cell>
     <Cell><Data ss:Type="Number">128.0</Data></Cell>

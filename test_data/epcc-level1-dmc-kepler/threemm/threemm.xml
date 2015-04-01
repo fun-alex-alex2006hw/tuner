@@ -79,6 +79,9 @@
     <Cell><Data ss:Type="String">Signif?</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">threemm</Data></Cell>
+    <Cell><Data ss:Type="Number">0.005243</Data></Cell>
+    <Cell><Data ss:Type="Number">1.64620776332e-05</Data></Cell>
     <Cell ss:Index="4"><Data ss:Type="Number">0.000999666666667</Data></Cell>
     <Cell><Data ss:Type="Number">1.80369990113e-05</Data></Cell>
     <Cell><Data ss:Type="Number">928.0</Data></Cell>
