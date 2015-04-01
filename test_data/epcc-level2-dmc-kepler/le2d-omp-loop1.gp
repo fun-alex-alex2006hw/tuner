@@ -3,11 +3,11 @@ set term postscript eps enhanced color size 10, 21 "Times-Roman,24"
 set output "le2d-omp-loop1.eps"
 set multiplot layout 3,1
 
-set title "All Points Tested - Optimal: 416 gangs, vector length 128 - Resulting time 9.147607 (stdev: 0)"
+set title "All Points Tested - Optimal: 1024 gangs, vector length 128 - Resulting time 9.149171 (stdev: 0.00120521906722)"
 set xlabel "Num Gangs"
 set ylabel "Vector Length"
 set zlabel "Time" rotate
-set label 1 "9.147607" at 416.0, 128.0, 9.147607 left
+set label 1 "9.149171" at 1024.0, 128.0, 9.149171 left
 set grid
 
 splot 'le2d-omp-loop1.dat' using 1:2:3 notitle with points pointtype 7
